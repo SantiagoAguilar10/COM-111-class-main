@@ -1,0 +1,31 @@
+div {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 0;
+}
+
+.one{
+  background: lightcoral;
+  border: 10px solid black;
+  padding: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.two {
+  background: lightblue;
+  border: 20px solid black;
+  position: relative;
+  top: 220px;   /* move down diagonal */
+  left: 220px;
+}
+
+.three {
+  background: lightgreen;
+  border: 10px solid black;
+  position: relative;
+  top: 440px;   /* move further down diagonal */
+  left: 440px;
+}
