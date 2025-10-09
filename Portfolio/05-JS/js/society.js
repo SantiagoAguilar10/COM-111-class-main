@@ -41,18 +41,33 @@ function flatlander(width, height, x, y, isHappy) {
     ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
     ctx.fillText(this.happyPoints, this.x, this.y + 5);
   };
+
   this.newPos = function (canvasWidth, canvasHeight) {
-    // TODO: Update the x, y position using the this.speedX and this.speedY
-    // values of the object. Make sure that when they reach an edge, they
-    // bounce back.
+    //Mover y hacer que reboten en los bordes
+    this.x += this.speedX;
+    this.y += this.speedY;
+    if (this.x <= 0 || this.x + this.width >= canvasWidth) {
+      this.speedX *= -1;
+    }
+    if (this.y <= 0 || this.y + this.height >= canvasHeight) {
+      this.speedY *= -1;
+    }
   };
   this.moreHappy = function () {
-    // TODO: increase the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    // Aumentar happyPoints y actualizar imagen 
+    this.happyPoints += 0.05;
+    if (this.happyPoints > 1 && !this.isHappy) {
+      this.isHappy = true;
+      this.image.src = happySrc;
+    }
   };
   this.lessHappy = function () {
-    // TODO: decrease the happyPoints value and check if the isHappy flag
-    // needs to be updated along with the image being displayed
+    // Disminuir "happyPoints" y actualizar imagen
+    this.happyPoints -= 0.05;
+    if (this.happyPoints < 0 && this.isHappy) {
+      this.isHappy = false;
+      this.image.src = sadSrc;
+    }
   };
   this.checkSurroundings = function (other) {
     var x = Math.pow(this.x - other.x, 2);
@@ -61,21 +76,22 @@ function flatlander(width, height, x, y, isHappy) {
   };
 }
 
+
 function startGame() {
-  // TODO: make sure to get all the values from the screen
-  var n = 1;
-  var m = 1;
+  // Get all the values from the screen
+  var n = parseInt(document.getElementById("num").value);
+  var m = parseInt(document.getElementById("sad").value);
   if (parseInt(m) > parseInt(n)) {
     window.alert("Can not have more sad than individuals.");
     return;
   }
   var sad = 0;
+  // I hope it's just luck. But I don't see quite a "relevant" change in the simulation
   for (i = 0; i < n; i++) {
-    //var rand = Math.random() * 100;
-    // 30% of chance of getting an angry subject
-    var nX = (Math.random() * 10000) % myGameArea.canvas.width;
-    var nY = (Math.random() * 10000) % myGameArea.canvas.height;
-    var gamePiece = new flatlander(30, 30, nX, nY, ++sad > m);
+    var nX = Math.random() * myGameArea.canvas.width;
+    var nY = Math.random() * myGameArea.canvas.height;
+    var isHappy = ++sad > m;
+    var gamePiece = new flatlander(30, 30, nX, nY, isHappy);
     myGamePiece.push(gamePiece);
   }
   myGameArea.start();

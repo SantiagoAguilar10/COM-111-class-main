@@ -3,28 +3,34 @@
     all Prime Factors (if there are any) and display them.
 */
 
-var getPrimeFactors = function (n) {
+var getPrimeFactors = function () {
   "use strict";
 
-  function isPrime(n) {
-    var i;
+  var n = parseInt(document.getElementById("num").value);
+  var pfSpan = document.getElementById("pf");
 
-    for (i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) {
+  function isPrime(num) {
+    if (num < 2) return false;
+    for (var i = 2; i <= Math.sqrt(num); i++) { // Hasta la raiz del número (Por optimización)
+      if (num % i === 0) {
         return false;
       }
     }
     return true;
   }
 
-  var i,
-    sequence = [];
+  var sequence = [];
 
-  //TODO: Check which numbers are factors of n and also check if
-  // that number also happens to be a prime
+  // Checar si los divisores son primos
+  for (var i = 2; i <= n; i++) {
+    if (n % i === 0 && isPrime(i)) {
+      sequence.push(i);
+    }
+  }
 
-  return sequence;
+  pfSpan.textContent = "Prime factors: " + sequence.join(", ");
 };
 
-// the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ]
+
+// the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ] 
 console.log(getPrimeFactors(30030));

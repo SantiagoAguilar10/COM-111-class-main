@@ -84,11 +84,11 @@ function moveup() {
 }
 
 function movedown() {
-  //TODO: implement the move down functionality
+  myGamePiece.speedY += 1;
 }
 
 function moveleft() {
-  //TODO: implement the move left functionality
+  myGamePiece.speedX -= 1;
 }
 
 function moveright() {

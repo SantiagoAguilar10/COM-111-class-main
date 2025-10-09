@@ -13,21 +13,27 @@
     <script type="text/javascript">
         function checkPrime() {
             var id = document.getElementById("num");
-            var number = parseInt(document.getElementById("num").value);
-            var maxNum = parseInt(1299827);
+            var number = parseInt(id.value);
+            var maxNum = 1299827;
+
             if (number < maxNum && !isNaN(number)) {
                 for (var i = number + 1; i < maxNum; i++) {
-                    //TODO: check if the current number is a prime or not
-                    // If it is, then return it
-                    continue;
+                    // Verifica si el número es primo
+                    if (isPrime(i)) { // Si bien recuerdo, no se especificaba. Lo hice con un alert()
+                        alert("The next prime number after " + number + " is: " + i);
+                        return i; // Break -- Para no seguir con la búsqueda
+                    }
                 }
+                alert("No prime number found below " + maxNum);
             } else {
-                window.alert("Please Enter Number Below 1299827 or Enter A Valid Integer");
+                alert("Please enter a number below 1,299,827 or a valid integer");
                 id.value = "";
             }
         }
+
         function isPrime(num) {
-            for (var i = 2; i < num; i++) {
+            if (num < 2) return false; // Los números menores que 2 no son primos
+            for (var i = 2; i <= Math.sqrt(num); i++) { // Para optimizar, usualmente se itera hasta la raiz del número
                 if (num % i === 0) {
                     return false;
                 }
@@ -41,10 +47,10 @@
     <form id="form1" runat="server">
         <div>
             <input type="text" id="num" />
-            <button id="btn" onclick="checkPrime();return false">
-                Click To Get Next Prime Number</button>
+            <button id="btn" onclick="checkPrime(); return false;">
+                Click To Get Next Prime Number
+            </button>
         </div>
     </form>
 </body>
-
 </html>

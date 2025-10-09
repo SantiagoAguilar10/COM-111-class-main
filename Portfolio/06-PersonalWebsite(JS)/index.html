@@ -1,12 +1,323 @@
-<!DOCTYPE html>
+<!-- FILE: index.html -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-  
+
+
+  <div class="clouds">
+    <img class="cloud cloud-left" src="images/cloud.png" alt="cloud left">
+    <img class="cloud cloud-right" src="images/cloud.png" alt="cloud right">
+  </div>
+
+  <header class="header">
+    <div class="avatar-wrap">
+      <img class="avatar logo" src="/Portfolio/03-Personal Website (CSS)/images/Heroes/Captura de pantalla 2025-09-02 113530.png" alt="My Pic">
+    </div>
+    <div class="main-info">
+      <h1 id="my-name">Santiago Aguilar</h1>
+      <p class="job-title">Student at Universidad Panamericana - Guadalajara, Jalisco, Mexico</p>
+      <p class="presentation">I'm a Computer Science student at Universidad Panamericana Campus Guadalajara.</p>
+      <blockquote class="quote">"Every Memento Mori, deserves a Carpe Diem"</blockquote>
+
+      <div class="nav-links">
+        <a class="btn" href="/Portfolio/03-Personal Website (CSS)/destinations.html">My Favorite Spots</a>
+      </div>
+    </div>
+  </header>
+
+  <hr/>
+
+  <main>
+
+    <section class="section" id="background">
+      <h2>Background</h2>
+      <p>
+        I was born in Guadalajara, I have one brother, I'm the older sibling. I've lived most of my life with my grandparents<br>
+        Both of my parents have worked in IT related jobs, my father works as a Software Developer and I want to work in that too<br>
+        I'm introverted, oftentimes more logical than emotional. If you know about MBTI it's INTJ<br>
+        I like movies, reading and I love music, mainly indie and rock because I also play the guitar.
+      </p>
+
+      <div class="subsection" id="education">
+        <h3>Education</h3>
+        <ul class="education-list">
+          <li>
+            <a href="https://ccpgdl.edu.mx/" class="school-link">
+              <img class="school-logo logo" src="images/schools/primaria.jpg" alt="Elementary logo">
+            </a>
+            <span class="year">2012 - 2018</span> — <strong class="school-name">Colegio Cervantes Primaria</strong>
+          </li>
+          <li>
+            <a href="https://ccbosque.edu.mx/" class="school-link">
+              <img class="school-logo logo" src="images/schools/secundaria.png" alt="Middle school logo">
+            </a>
+            <span class="year">2018 - 2021</span> — <strong class="school-name">Colegio Cervantes Bosque - Secundaria</strong>
+          </li>
+          <li>
+            <a href="https://cervantes.edu.mx/" class="school-link">
+              <img class="school-logo logo" src="images/schools/prepa.jpeg" alt="High school logo">
+            </a>
+            <span class="year">2021 - 2024</span> — <strong class="school-name">Colegio Cervantes Costa Rica - Bachillerato</strong>
+          </li>
+          <li>
+            <a href="https://www.up.edu.mx/" class="school-link">
+              <img class="school-logo logo" src="images/schools/universidad.jpeg" alt="College logo">
+            </a>
+            <span class="year">2024 - Present</span> — <strong class="school-name">Universidad Panamericana Campus Guadalajara</strong>
+          </li>
+        </ul>
+      </div>
+
+      <div class="subsection" id="skills">
+        <h3>Skills</h3>
+        <ol class="skills-list">
+          <li>
+            <span class="skill-name">C++</span>
+            <span class="skill-percent">60%</span>
+            <div class="progress"><div style="width:85%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">Python</span>
+            <span class="skill-percent">40%</span>
+            <div class="progress"><div style="width:80%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">HTML &amp; CSS</span>
+            <span class="skill-percent">50%</span>
+            <div class="progress"><div style="width:90%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">English</span>
+            <span class="skill-percent">80%</span>
+            <div class="progress"><div style="width:75%"></div></div>
+          </li>
+          <li>
+            <span class="skill-name">Problem Solving</span>
+            <span class="skill-percent">70%</span>
+            <div class="progress"><div style="width:60%"></div></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <hr/>
+
+    <section class="section" id="hobbies">
+      <h2>Hobbies</h2>
+        <ul>
+          <li>Guitar Playing</li>
+          <li>Language Learning</li>
+          <li>Reading</li>
+        </ul>
+      <div class="subsection" id="fav-food">
+        <h3>Favorite food</h3>
+        <p>Out of the cuisines provided, my top 5 are:</p>
+        <ol class="cuisines-top">
+          <li>Japanese</li>
+          <li>Italian</li>
+          <li>Mexican</li>
+          <li>German</li>
+          <li>Greek</li>
+        </ol>
+
+        <p>Bottom 3:</p>
+        <ol class="cuisines-bottom">
+          <li>Indian</li>
+          <li>Arab</li>
+          <li>Scottish</li>
+        </ol>
+      </div>
+
+      <div class="subsection" id="books-movies">
+        <h3>Books, Movies & TV Shows</h3>
+
+        <div class="category">
+          <h4>Books</h4>
+          <ul>
+            <li>The Little Prince</li>
+            <li>Goliath</li>
+            <li>At the Mountains of Madness</li>
+          </ul>
+        </div>
+
+        <div class="category movies-grid">
+          <h4>Movies</h4>
+          <figure>
+            <img class="media" src="/images/shows/batman.jpg" alt="Inception cover">
+            <figcaption>Inception</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="/images/shows/batman.jpg" alt="Interstellar cover">
+            <figcaption>Interstellar</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="/images/shows/batman.jpg" alt="Star Wars cover">
+            <figcaption>Star Wars</figcaption>
+          </figure>
+        </div>
+
+        <div class="category shows-grid">
+          <h4>TV Shows</h4>
+          <figure>
+            <img class="media" src="images/shows/AOT.jpg" alt="AOT">
+            <figcaption>Attack on Titan</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="images/shows/Gravity.jpg" alt="Gravity Falls">
+            <figcaption>Gravity Falls</figcaption>
+          </figure>
+          <figure>
+            <img class="media" src="images/shows/batman.jpg" alt="Batman Animated">
+            <figcaption>Batman: The Animated Series</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <hr/>
+
+    <section class="section" id="heroes">
+      <h2>Heroes/Writers/Artists</h2>
+      <div class="team">
+        <div class="team-member">
+          <img src="images/Heroes/Keanu.jpg" alt="Hero 1">
+          <h3>Keanu Reeves</h3>
+          <p>Actor</p>
+          <p>Good Human Being :)</p>
+        </div>
+        <div class="team-member">
+          <img src="/images/shows/batman.jpg" alt="Hero 2">
+          <h3>Batman</h3>
+          <p>SuperHero</p>
+          <p>Famous fictional character. Batman</p>
+        </div>
+        <div class="team-member">
+          <img src="images/Heroes/Tesla.jpeg" alt="Hero 3">
+          <h3>Nikola Tesla</h3>
+          <p>Innovator</p>
+          <p>Famous Inventor and Innovator</p>
+        </div>
+      </div>
+    </section>
+
+    <hr/>
+
+    <section class="section" id="weekly-schedule">
+      <h2>Weekly Schedule</h2>
+      <div class="table-wrap">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Description</th>
+              <th>Place</th>
+              <th>Type</th>
+              <th>Notes</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- I wasn't sure to remove the "Lorem Ipsum", but I think it'll still work-->
+            <tr>
+              <td>2025-09-01</td>
+              <td>09:00</td>
+              <td>11:00</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td class="status busy">🔴 Busy</td>
+            </tr>
+            <tr>
+              <td>2025-09-02</td>
+              <td>14:00</td>
+              <td>15:00</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td>Lorem ipsum</td>
+              <td class="status free">✅ Free</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <hr/>
+
+    <section class="section" id="form-schedule">
+      <h2>Register a Weekly Schedule Item</h2>
+      <form class="schedule-form" action="#" method="post">
+        <div class="form-row">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-row">
+          <label for="start">Time start</label>
+          <input type="time" id="start" name="start" required>
+        </div>
+
+        <div class="form-row">
+          <label for="end">Time end</label>
+          <input type="time" id="end" name="end" required>
+        </div>
+
+        <div class="form-row">
+          <label for="activity">Activity</label>
+          <input type="text" id="activity" name="activity" placeholder="Activity title">
+        </div>
+
+        <div class="form-row">
+          <label for="place">Place</label>
+          <input type="text" id="place" name="place" placeholder="Place">
+        </div>
+
+        <div class="form-row">
+          <label for="type">Type</label>
+          <select id="type" name="type">
+            <option>School</option>
+            <option>Personal</option>
+            <option>Professional</option>
+            <option>Familiar</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Additional notes"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="flag">Flag (color)</label>
+          <input type="color" id="flag" name="flag" value="#00ADB5">
+        </div>
+
+        <div class="form-row checkbox-row">
+          <label for="freebusy">Free / Busy</label>
+          <input type="checkbox" id="freebusy" name="freebusy"> Busy
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Save</button>
+          <button type="reset" class="btn alt">Reset</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo"></footer>
+  <script src="./js/server.js"></script>
 </body>
 </html>
