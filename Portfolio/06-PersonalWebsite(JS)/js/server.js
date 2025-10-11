@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".schedule-form");
     const tableBody = document.querySelector(".schedule-table tbody");
 
-  // Escucha el evento de envío del formulario
+  // Event Listener para cuando se envie el "formulario"
     form.addEventListener("submit", (event) => {
         event.preventDefault(); // Evita que recargue la página
 
-        // Obtiene los valores de los campos del formulario
+        // Obtiene los valores del formulario
         const date = document.querySelector("#date").value;
         const start = document.querySelector("#start").value;
         const end = document.querySelector("#end").value;
@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const flagColor = document.querySelector("#flag").value;
         const isBusy = document.querySelector("#freebusy").checked;
 
-    // Crea una nueva fila
+    // Crear una nueva fila
         const newRow = document.createElement("tr");
 
-    // Inserta el contenido en la fila
+    // Poner las respuestas en la fila nueva
         newRow.innerHTML = `
         <td>${date}</td>
         <td>${start}</td>
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
         </td>
         `;
 
-        // Aplica color de bandera al borde izquierdo de la fila
+        // Color de la "bandera"
         newRow.style.borderLeft = `6px solid ${flagColor}`;
 
         // Agrega la nueva fila a la tabla
         tableBody.appendChild(newRow);
 
-        // Limpia el formulario
+        // Limpia las respuestas del formulario, para volverlo a llenar
         form.reset();
     });
 });
