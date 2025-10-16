@@ -1,0 +1,196 @@
+<!-- Sections marked with 'A' until '/A' were fixed by AI-->
+<!-- Sections marked with '==' Something '==' were done in it's majority by AI. I wanted to know how it worked-->
+<!-- If this means those sections should not be graded fully. Then I'll accept it-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Showcase - Amigo</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!--NAVBAR-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="bi bi-stars"></i> Galactic Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <form class="d-flex ms-auto" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search the galaxy...">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!--HERO con Carousel-->
+  <!-- I would've used 'Lorem Ipsum'. Until I found these phrases-->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner text-center">
+      <div class="carousel-item active bg-dark text-white p-5">
+        <h1 class="display-5">Welcome to the Galaxy</h1>
+        <p>Explore the stars, build with Bootstrap.</p>
+      </div>
+      <div class="carousel-item bg-primary text-white p-5">
+        <h1 class="display-5">May the Code Be With You</h1>
+        <p>Responsive, simple, and elegant designs.</p>
+      </div>
+      <div class="carousel-item bg-secondary text-white p-5">
+        <h1 class="display-5">Bootstrap Mastery</h1>
+        <p>One framework to rule them all.</p>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="container py-5">
+
+    <!--Botones-->
+    <h2 class="mb-3">Buttons & Button Groups</h2>
+    <div class="mb-3">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-success">Success</button>
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-warning">Warning</button>
+    </div>
+    <div class="btn-group mb-4" role="group">
+      <button class="btn btn-outline-primary">Left</button>
+      <button class="btn btn-outline-primary">Middle</button>
+      <button class="btn btn-outline-primary">Right</button>
+    </div>
+
+    <!--Accordion-->
+    <h2>Accordion </h2>
+    <div class="accordion mb-4" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Section 1</button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Star Wars ipsum dolor sit amet, lightsaber wielding Yoda speaks.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo">Section 2</button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">Lorem ipsum dolor sit amet, the Force is strong with this one.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- A -->
+    <!--Card + Modal + Popover + Tooltip + Spinner -->
+    <h2>Card + Modal + Popover + Tooltip + Spinner</h2>
+    <div class="card mb-4 border-primary bg-white">
+      <div class="card-body">
+        <h5 class="card-title">Luke Skywalker</h5>
+        <p class="card-text">“I'm a Jedi, like my father before me.”</p>
+        <button class="btn btn-outline-info me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Open Modal</button>
+        <button class="btn btn-outline-secondary me-2" data-bs-toggle="popover" title="Did you know?" data-bs-content="Luke was raised on Tatooine.">Popover</button>
+        <button class="btn btn-outline-dark" data-bs-toggle="tooltip" title="Hover tooltip">Tooltip</button>
+        <div class="spinner-border text-primary ms-3" role="status"></div>
+      </div>
+    </div>
+    <!-- /A -->
+
+    <!--Barra de progreso-->
+    <h2>Progress Bar</h2>
+    <div class="progress mb-4" style="height: 25px;">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 60%;">60%</div>
+    </div>
+
+    <!-- A -->
+    <!-- Iconic Link -->
+    <p><a href="#" class="link-primary text-decoration-none"><i class="bi bi-github"></i> Visit the Repo</a></p>
+
+    <!--Floating Label Sign-in Form-->
+    <h2>Sign In</h2>
+    <form class="w-50 mx-auto mb-5">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+        <label for="floatingEmail">Email address</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Sign In</button>
+    </form>
+    <!-- /A-->
+
+
+
+    <!-- A-->
+    <!-- ===== Toast (extra) ===== -->
+    <button class="btn btn-warning" id="liveToastBtn">Show Toast</button>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="liveToast" class="toast align-items-center text-bg-primary border-0">
+        <div class="d-flex">
+          <div class="toast-body">
+            Welcome to the dark side of Bootstrap!
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== STICKY FOOTER (extra) ===== -->
+  <footer class="bg-dark text-white text-center py-3 mt-auto sticky-bottom">
+    <p class="mb-0"><i class="bi bi-c-circle"></i> 2025 Galactic Bootstrap | Made by Amigo</p>
+  </footer>
+
+  <!-- ===== Modal ===== -->
+  <div class="modal fade" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal Example</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. The Force will be with you, always.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /A -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <!-- == Activate Tooltips & Popovers & Toast ==  -->
+  <script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+    document.querySelectorAll('[data-bs-toggle="popover"]').forEach(el => new bootstrap.Popover(el));
+    const toastTrigger = document.getElementById('liveToastBtn');
+    const toastLiveExample = document.getElementById('liveToast');
+    if (toastTrigger) {
+      const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+      toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show();
+      });
+    }
+  </script>
+</body>
+</html>
