@@ -1,0 +1,22 @@
+<%- include('partials/header', { title: post.title }) %>
+
+<h2><%= post.title %></h2>
+<p><%= post.content %></p>
+
+<form action="/edit/<%= id %>" method="post">
+  <label for="title">Edit Title:</label>
+  <input type="text" name="title" id="title" value="<%= post.title %>" required>
+
+  <label for="content">Edit Content:</label>
+  <textarea name="content" id="content" required><%= post.content %></textarea>
+
+  <button type="submit">Save Changes</button>
+</form>
+
+<form action="/delete/<%= id %>" method="post" style="margin-top:1em;">
+  <button type="submit">Delete Post</button>
+</form>
+
+<a href="/home">← Back to Home</a>
+
+<%- include('partials/footer') %>

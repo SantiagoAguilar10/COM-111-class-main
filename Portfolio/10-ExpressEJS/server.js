@@ -1,19 +1,77 @@
 const express = require("express");
 const app = express();
-const https = require("https");
+const path = require("path");
+const bodyParser = require("body-parser");
 
-// TODO: configure the express server
+const PORT = 3000;
 
-const longContent =
-  "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
+// Archivos estáticos (css, imágenes, html)
+app.use(express.static(path.join(__dirname, "public")));
 
+// Configurar EJS
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+// JSON y formularios
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//
 let posts = [];
 let name;
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/html/index.html");
+  res.sendFile(path.join(__dirname, "public/html/index.html"));
 });
 
-app.listen(3000, (err) => {
-  console.log("Listening on port 3000");
+// Login POST → redirige a /home
+app.post("/login", (req, res) => {
+  name = req.body.name;
+  if (!name) return res.redirect("/");
+  res.redirect("/home");
+});
+
+// Página principal del blog
+app.get("/home", (req, res) => {
+  if (!name) return res.redirect("/");
+  res.render("home", { username: name, posts });
+});
+
+// Crear un nuevo post
+app.post("/newpost", (req, res) => {
+  const { title, content } = req.body;
+  if (title && content) {
+    posts.push({ title, content });
+  }
+  res.redirect("/home");
+});
+
+// Leer un post
+app.get("/post/:id", (req, res) => {
+  const id = req.params.id;
+  const post = posts[id];
+  if (!post) return res.redirect("/home");
+  res.render("post", { id, post });
+});
+
+// Editar un post
+app.post("/edit/:id", (req, res) => {
+  const id = req.params.id;
+  posts[id] = {
+    title: req.body.title,
+    content: req.body.content,
+  };
+  res.redirect("/home");
+});
+
+// Eliminar un post
+app.post("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  posts.splice(id, 1);
+  res.redirect("/home");
+});
+
+// Servidor
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
 });

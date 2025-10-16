@@ -8,7 +8,7 @@ const port = 3000;
 // Leer los datos del formulario
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Servir el archivo index.html cuando se visite "/"
+// 'Server' de 'index.html'
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
